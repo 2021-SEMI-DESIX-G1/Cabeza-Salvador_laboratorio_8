@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  backend:
+    build:
+        context: ./backend
+    hostname: backend
+    image: lab8
+    ports:
+        - "3000:3000"
+    volumes:
+        - "./backend/app.js:/code/app.js"
+        - "./backend/package.json:/code/package.json"
+        - "./backend/package-lock.json:/code/package-lock.json"
